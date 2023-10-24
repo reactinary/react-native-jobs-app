@@ -7,7 +7,15 @@ import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 import useFetch from "../../../hook/useFetch";
 
 
-const Nearbyjobs = () => {
+type JobData = {
+  job_id: string;
+  employer_logo: string;
+  job_title: string;
+  job_employment_type: string;
+};
+
+
+const Nearbyjobs: React.FC = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("search", {
     query: "React Native developer",

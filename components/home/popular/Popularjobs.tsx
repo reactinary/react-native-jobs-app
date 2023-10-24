@@ -7,7 +7,16 @@ import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
 
 
-const Popularjobs = () => {
+type JobData = {
+  job_id: string;
+  employer_logo: string;
+  employer_name: string;
+  job_title: string;
+  job_publisher: string;
+  job_country: string;
+};
+
+const Popularjobs: React.FC = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("search", {
     query: "React developer",

@@ -5,10 +5,16 @@ import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
 
 
+type WelcomeProps = {
+  searchTerm: string;
+  setSearchTerm: (text: string) => void;
+  handleClick: () => void;
+};
+
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 
-const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
+const Welcome: React.FC<WelcomeProps> = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState("Full-time");
 

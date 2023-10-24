@@ -3,7 +3,21 @@ import styles from "./popularjobcard.style";
 import { checkImageURL } from "../../../../utils";
 
 
-const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
+type PopularJob = {
+  employer_name: string;
+  employer_logo: string;
+  job_title: string;
+  job_publisher: string;
+  job_country: string;
+};
+
+type PopularJobCardProps = {
+  item: PopularJob;
+  selectedJob: boolean;
+  handleCardPress: (item: PopularJob) => void;
+};
+
+const PopularJobCard: React.FC<PopularJobCardProps> = ({ item, selectedJob, handleCardPress }) => {
   return (
     <TouchableOpacity style={styles.container(selectedJob, item)}
       onPress={() => handleCardPress(item)}>
