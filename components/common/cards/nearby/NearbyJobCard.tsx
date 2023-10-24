@@ -3,7 +3,19 @@ import styles from "./nearbyjobcard.style";
 import { checkImageURL } from "../../../../utils";
 
 
-const NearbyJobCard = ({ job, handleNavigate }) => {
+
+type NearbyJob = {
+  job_title: string;
+  employer_logo: string;
+  job_employment_type: string;
+};
+
+type NearbyJobCardProps = {
+  job: NearbyJob;
+  handleNavigate: () => void;
+};
+
+const NearbyJobCard: React.FC<NearbyJobCardProps> = ({ job, handleNavigate }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>

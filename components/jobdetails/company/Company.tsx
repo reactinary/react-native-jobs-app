@@ -5,7 +5,14 @@ import { icons } from "../../../constants";
 import { checkImageURL } from "../../../utils";
 
 
-const Company = ({ companyLogo, jobTitle, companyName, location }) => {
+type CompanyProps = {
+  companyLogo: string;
+  jobTitle: string;
+  companyName: string;
+  location: string;
+};
+
+const Company: React.FC<CompanyProps> = ({ companyLogo, jobTitle, companyName, location }) => {
   return (
     <View style={styles.container}>
       <View style={styles.logoBox}>

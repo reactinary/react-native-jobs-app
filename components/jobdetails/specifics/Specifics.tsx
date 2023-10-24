@@ -1,8 +1,12 @@
 import { View, Text } from "react-native";
-
 import styles from "./specifics.style";
 
-const Specifics = ({ title, points }) => {
+type SpecificsProps = {
+  title: string;
+  points: string[];
+};
+
+const Specifics: React.FC<SpecificsProps> = ({ title, points }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}:</Text>
